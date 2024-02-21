@@ -1,0 +1,130 @@
+.mulish-font {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal; }
+
+body {
+  margin: 0;
+  font-family: "Mulish", sans-serif;
+  background-color: #f4f4f4;
+  width: 100vw;
+  height: 100%; }
+
+a {
+  color: #000; }
+
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    align-items: center; }
+  .header li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold; }
+  .header .logo {
+    display: block;
+    font-size: 2rem;
+    padding: 1rem;
+    text-decoration: none; }
+  .header .menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff; }
+    .header .menu.open {
+      max-height: 100vh; }
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem;
+    position: relative;
+    user-select: none; }
+    .header .menu-icon .navicon {
+      background: #333;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background 0.2s ease-out;
+      width: 2rem; }
+      .header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
+        background: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        width: 100%; }
+      .header .menu-icon .navicon:before {
+        top: 0.5rem; }
+      .header .menu-icon .navicon:after {
+        top: -0.5rem; }
+  .header .menu-btn {
+    display: none; }
+    .header .menu-btn:checked ~ .menu {
+      min-height: 100vh; }
+    .header .menu-btn:checked ~ .menu-icon .navicon {
+      background: transparent; }
+      .header .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+        top: 0; }
+      .header .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+        top: 0; }
+  @media (min-width: 48em) {
+    .header ul {
+      flex-direction: row; }
+    .header li {
+      margin-right: 2rem; }
+    .header .menu {
+      max-height: none;
+      overflow: visible;
+      position: relative;
+      flex-direction: row;
+      background-color: transparent; }
+    .header .menu-icon {
+      display: none; } }
+
+.hero-slider-container {
+  min-height: 90vh; }
+
+.slider {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* Adjust height as needed */ }
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-size: cover;
+  background-position: center top; }
+
+.slide.active {
+  opacity: 1; }
