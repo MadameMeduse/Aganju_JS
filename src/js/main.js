@@ -32,3 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(nextSlide, 3000); // Change slide every 3 seconds
 });
+
+// Get the current year
+const currentYear = new Date().getFullYear();
+
+// Update the content of the currentYear span element
+document.getElementById("currentYear").textContent = currentYear;
