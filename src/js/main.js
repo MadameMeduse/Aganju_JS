@@ -1,3 +1,19 @@
+//NAVIGATION
+//NAV LINKS
+// Add 'active' class to the current page's navigation item
+document.addEventListener("DOMContentLoaded", () => {
+  // Get the current URL path
+  const path = window.location.pathname;
+
+  // Find the corresponding navigation item and add 'active' class
+  const navItems = document.querySelectorAll(".header li a");
+  navItems.forEach((item) => {
+    if (item.getAttribute("href") === path) {
+      item.classList.add("active");
+    }
+  });
+});
+
 //Burger Menu
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -9,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//Slider
+//SLIDER
 
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
@@ -32,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(nextSlide, 3000); // Change slide every 3 seconds
 });
+
+//FOOTER
 
 // Get the current year
 const currentYear = new Date().getFullYear();

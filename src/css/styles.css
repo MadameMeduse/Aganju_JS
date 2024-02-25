@@ -17,7 +17,7 @@ body {
   font-family: "Mulish", sans-serif;
   line-height: 1.6;
   font-size: 16px;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -62,6 +62,11 @@ img {
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold; }
+    .header li a.active {
+      text-decoration: underline; }
+    @media (min-width: 48em) {
+      .header li a:hover {
+        text-decoration: underline; } }
   .header .logo {
     display: block;
     font-size: 2rem;
@@ -79,7 +84,8 @@ img {
     right: 0;
     background-color: #fff; }
     .header .menu.open {
-      max-height: 100vh; }
+      max-height: 100vh;
+      padding-top: 30%; }
   .header .menu-icon {
     cursor: pointer;
     display: inline-block;

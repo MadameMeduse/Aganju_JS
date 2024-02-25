@@ -1,6 +1,6 @@
 // Variables
 $color-black: #000;
-$color-background: #f4f4f4;
+$color-background: #ffffff;
 $color-header-bg: #fff;
 $color-shadow: rgba(0, 0, 0, 0.1);
 $font-family: "Mulish", sans-serif;
@@ -90,6 +90,17 @@ img {
     text-decoration: none;
     font-size: $font-size-nav-link;
     font-weight: bold;
+
+    // Add underline for active list item
+    &.active {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 48em) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .logo {
@@ -114,6 +125,7 @@ img {
 
     &.open {
       max-height: 100vh; // Display the menu when the 'open' class is applied
+      padding-top: 30%;
     }
   }
 
