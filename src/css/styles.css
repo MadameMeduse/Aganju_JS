@@ -161,7 +161,7 @@ img {
   .main-wrapper .main-wrapper-image {
     max-width: 400px;
     align-self: center;
-    padding: 4rem;
+    padding: 0 4rem;
     border-right: solid 2px black; }
     @media screen and (max-width: 768px) {
       .main-wrapper .main-wrapper-image {
