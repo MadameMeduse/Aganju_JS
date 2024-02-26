@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:scss": "node-sass docs/styles/styles.scss -o docs/css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch:scss": "node-sass src/styles/styles.scss -o src/css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "deploy": "npm run build && gh-pages -d docs"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,11 @@
   "dependencies": {
     "node-sass": "^9.0.0",
     "normalize-scss": "^8.0.0",
-    "sass": "^1.71.1"
+    "sass": "^1.71.1",
+    "webpack": "^5.90.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "webpack-cli": "^5.1.4"
   }
 }
