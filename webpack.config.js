@@ -14,4 +14,9 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    contentBase: path.join(__dirname, "docs"), // Serve files from 'docs' directory
+    index: "index.html", // Use 'index.html' as the default index file
+    port: 8080, // Optional: Specify the port to listen on
+  },
 };
