@@ -1,0 +1,354 @@
+// Variables
+$color-black: #000;
+$color-background: #ffffff;
+$color-header-bg: #fff;
+$color-shadow: rgba(0, 0, 0, 0.1);
+$font-family: "Mulish", sans-serif;
+$font-size-logo: 2rem;
+$font-size-nav-link: 1.2rem;
+
+// Mixins
+@mixin transition($properties, $duration, $timing: ease) {
+  transition: $properties $duration $timing;
+}
+
+//Font
+// <uniquifier>: Use a uniquifier for the class name
+
+.mulish-font {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Add box-sizing border-box to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Base styles
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: $font-family;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: $color-background;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+a {
+  color: $color-black;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Header styles
+.header {
+  background-color: $color-header-bg;
+  box-shadow: 1px 1px 4px 0 $color-shadow;
+  position: sticky;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: $color-header-bg;
+    display: flex;
+    align-items: center;
+  }
+
+  li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: bold;
+
+    // Add underline for active list item
+    &.active {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 48em) {
+      font-size: $font-size-nav-link;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .logo {
+    display: block;
+    font-size: $font-size-logo;
+    padding: 1rem;
+    text-decoration: none;
+  }
+
+  // Menu styles
+  .menu {
+    max-height: 0;
+    overflow: hidden;
+    @include transition(max-height, 0.2s, ease-out);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $color-header-bg;
+
+    &.open {
+      max-height: 100vh; // Display the menu when the 'open' class is applied
+      padding-top: 30%;
+    }
+  }
+
+  // Menu icon styles
+  .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem;
+    position: relative;
+    user-select: none;
+
+    .navicon {
+      background: #333;
+      display: block;
+      height: 2px;
+      position: relative;
+      @include transition(background, 0.2s, ease-out);
+      width: 2rem;
+
+      &:before,
+      &:after {
+        background: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        @include transition(all, 0.2s, ease-out);
+        width: 100%;
+      }
+
+      &:before {
+        top: 0.5rem;
+      }
+
+      &:after {
+        top: -0.5rem;
+      }
+    }
+  }
+
+  // Menu button styles
+  .menu-btn {
+    display: none;
+
+    &:checked ~ .menu {
+      min-height: 100vh;
+    }
+
+    &:checked ~ .menu-icon .navicon {
+      background: transparent;
+
+      &:before {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+
+      &:after {
+        transform: rotate(45deg);
+        top: 0;
+      }
+    }
+  }
+
+  // Media query for screens with a minimum width of 48em (768px)
+  @media (min-width: 48em) {
+    ul {
+      flex-direction: row;
+    }
+
+    li {
+      margin-right: 2rem;
+    }
+
+    .menu {
+      max-height: none;
+      overflow: visible;
+      position: relative;
+      flex-direction: row;
+      background-color: transparent;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+  }
+}
+//main
+.main-booking {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: 768px) {
+    min-height: 100vh;
+  }
+
+  //Booking
+  .main-wrapper {
+    max-width: 1000px;
+    padding: 3vw;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .main-wrapper-image {
+      max-width: 400px;
+      align-self: center;
+      padding: 0 4rem;
+      border-right: solid 2px black;
+
+      @media screen and (max-width: 768px) {
+        width: 250px;
+        height: 250px;
+        border-bottom: solid 1px black;
+        border-right: none;
+        padding: 2rem;
+      }
+    }
+
+    .main-wrapper-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem;
+
+      a {
+        font-size: 1.3rem;
+
+        @media screen and (max-width: 768px) {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        align-items: center;
+        padding: 2rem;
+        margin: 0;
+      }
+
+      .content-title {
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      .content-phone {
+        margin: 1rem 0;
+      }
+    }
+  }
+}
+
+//Slider styles
+.hero-slider-container {
+  min-height: 90vh;
+
+  .slider {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Adjust height as needed */
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+
+      // Set background properties
+      background-size: cover;
+      background-position: center top;
+    }
+
+    // Ensure the first slide is visible by default
+    .slide.active {
+      opacity: 1;
+    }
+  }
+}
+
+//Footer
+
+.footer {
+  background-color: #909219ca; /* Example background color */
+  color: white; /* Example text color */
+  padding: 20px;
+  margin-top: auto; /* Push footer to the bottom */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .footer-link {
+      color: white;
+      font-size: 1.1rem;
+
+      @media screen and (max-width: 768px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+  }
+}
