@@ -60,13 +60,15 @@ img {
     display: block;
     padding: 1rem;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     font-weight: bold; }
     .header li a.active {
       text-decoration: underline; }
     @media (min-width: 48em) {
-      .header li a:hover {
-        text-decoration: underline; } }
+      .header li a {
+        font-size: 1.2rem; }
+        .header li a:hover {
+          text-decoration: underline; } }
   .header .logo {
     display: block;
     font-size: 2rem;
@@ -144,53 +146,54 @@ img {
   @media screen and (max-width: 768px) {
     .main-booking {
       min-height: 100vh; } }
-
-.main-wrapper {
-  max-width: 1000px;
-  padding: 3vw;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  margin: 0 auto; }
-  @media screen and (max-width: 768px) {
-    .main-wrapper {
-      flex-direction: column; } }
-  .main-wrapper .main-wrapper-image {
-    max-width: 400px;
-    align-self: center;
-    padding: 0 4rem;
-    border-right: solid 2px black; }
-    @media screen and (max-width: 768px) {
-      .main-wrapper .main-wrapper-image {
-        width: 250px;
-        height: 250px;
-        border-bottom: solid 1px black;
-        border-right: none;
-        padding: 2rem; } }
-  .main-wrapper .main-wrapper-content {
+  .main-booking .main-wrapper {
+    max-width: 1000px;
+    padding: 3vw;
+    flex: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding: 4rem;
-    font-size: 0.9rem; }
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto; }
     @media screen and (max-width: 768px) {
-      .main-wrapper .main-wrapper-content {
-        align-items: center;
-        padding: 2rem;
-        margin: 0; } }
-    .main-wrapper .main-wrapper-content .content-title {
-      margin-bottom: 2rem;
-      text-transform: uppercase; }
+      .main-booking .main-wrapper {
+        flex-direction: column; } }
+    .main-booking .main-wrapper .main-wrapper-image {
+      max-width: 400px;
+      align-self: center;
+      padding: 0 4rem;
+      border-right: solid 2px black; }
       @media screen and (max-width: 768px) {
-        .main-wrapper .main-wrapper-content .content-title {
-          display: none; } }
-    .main-wrapper .main-wrapper-content .content-phone {
-      margin: 1rem 0; }
-    .main-wrapper .main-wrapper-content .content-adress {
-      font-size: 1.2rem; }
+        .main-booking .main-wrapper .main-wrapper-image {
+          width: 250px;
+          height: 250px;
+          border-bottom: solid 1px black;
+          border-right: none;
+          padding: 2rem; } }
+    .main-booking .main-wrapper .main-wrapper-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem; }
+      .main-booking .main-wrapper .main-wrapper-content a {
+        font-size: 1.3rem; }
+        @media screen and (max-width: 768px) {
+          .main-booking .main-wrapper .main-wrapper-content a {
+            font-size: 1.1rem; } }
+      @media screen and (max-width: 768px) {
+        .main-booking .main-wrapper .main-wrapper-content {
+          align-items: center;
+          padding: 2rem;
+          margin: 0; } }
+      .main-booking .main-wrapper .main-wrapper-content .content-title {
+        margin-bottom: 2rem;
+        text-transform: uppercase; }
+        @media screen and (max-width: 768px) {
+          .main-booking .main-wrapper .main-wrapper-content .content-title {
+            display: none; } }
+      .main-booking .main-wrapper .main-wrapper-content .content-phone {
+        margin: 1rem 0; }
 
 .hero-slider-container {
   min-height: 90vh; }
@@ -213,7 +216,7 @@ img {
       opacity: 1; }
 
 .footer {
-  background-color: #ec4f38;
+  background-color: #909219ca;
   /* Example background color */
   color: white;
   /* Example text color */
@@ -233,3 +236,9 @@ img {
     .footer .footer-wrapper .footer-link {
       color: white;
       font-size: 1.1rem; }
+      @media screen and (max-width: 768px) {
+        .footer .footer-wrapper .footer-link {
+          font-size: 0.9rem; } }
+  @media screen and (max-width: 768px) {
+    .footer {
+      font-size: 0.7rem; } }

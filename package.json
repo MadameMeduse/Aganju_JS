@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "watch:scss": "node-sass src/scss -o src/css --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "deploy": "npm run build && gh-pages -d docs",
