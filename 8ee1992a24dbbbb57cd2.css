@@ -1,0 +1,244 @@
+.mulish-font {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal; }
+
+/* Add box-sizing border-box to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Mulish", sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.5rem; }
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0; }
+
+img {
+  max-width: 100%; }
+
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; }
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    align-items: center; }
+  .header li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: bold; }
+    .header li a.active {
+      text-decoration: underline; }
+    @media (min-width: 48em) {
+      .header li a {
+        font-size: 1.2rem; }
+        .header li a:hover {
+          text-decoration: underline; } }
+  .header .logo {
+    display: block;
+    font-size: 2rem;
+    padding: 1rem;
+    text-decoration: none; }
+  .header .menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff; }
+    .header .menu.open {
+      max-height: 100vh;
+      padding-top: 30%; }
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem;
+    position: relative;
+    user-select: none; }
+    .header .menu-icon .navicon {
+      background: #333;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background 0.2s ease-out;
+      width: 2rem; }
+      .header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
+        background: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        width: 100%; }
+      .header .menu-icon .navicon:before {
+        top: 0.5rem; }
+      .header .menu-icon .navicon:after {
+        top: -0.5rem; }
+  .header .menu-btn {
+    display: none; }
+    .header .menu-btn:checked ~ .menu {
+      min-height: 100vh; }
+    .header .menu-btn:checked ~ .menu-icon .navicon {
+      background: transparent; }
+      .header .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+        top: 0; }
+      .header .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+        top: 0; }
+  @media (min-width: 48em) {
+    .header ul {
+      flex-direction: row; }
+    .header li {
+      margin-right: 2rem; }
+    .header .menu {
+      max-height: none;
+      overflow: visible;
+      position: relative;
+      flex-direction: row;
+      background-color: transparent; }
+    .header .menu-icon {
+      display: none; } }
+
+.main-booking {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row; }
+  @media screen and (max-width: 768px) {
+    .main-booking {
+      min-height: 100vh; } }
+  .main-booking .main-wrapper {
+    max-width: 1000px;
+    padding: 3vw;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto; }
+    @media screen and (max-width: 768px) {
+      .main-booking .main-wrapper {
+        flex-direction: column; } }
+    .main-booking .main-wrapper .main-wrapper-image {
+      max-width: 400px;
+      align-self: center;
+      padding: 0 4rem;
+      border-right: solid 2px black; }
+      @media screen and (max-width: 768px) {
+        .main-booking .main-wrapper .main-wrapper-image {
+          width: 250px;
+          height: 250px;
+          border-bottom: solid 1px black;
+          border-right: none;
+          padding: 2rem; } }
+    .main-booking .main-wrapper .main-wrapper-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem; }
+      .main-booking .main-wrapper .main-wrapper-content a {
+        font-size: 1.3rem; }
+        @media screen and (max-width: 768px) {
+          .main-booking .main-wrapper .main-wrapper-content a {
+            font-size: 1.1rem; } }
+      @media screen and (max-width: 768px) {
+        .main-booking .main-wrapper .main-wrapper-content {
+          align-items: center;
+          padding: 2rem;
+          margin: 0; } }
+      .main-booking .main-wrapper .main-wrapper-content .content-title {
+        margin-bottom: 2rem;
+        text-transform: uppercase; }
+        @media screen and (max-width: 768px) {
+          .main-booking .main-wrapper .main-wrapper-content .content-title {
+            display: none; } }
+      .main-booking .main-wrapper .main-wrapper-content .content-phone {
+        margin: 1rem 0; }
+
+.hero-slider-container {
+  min-height: 90vh; }
+  .hero-slider-container .slider {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* Adjust height as needed */ }
+    .hero-slider-container .slider .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      background-size: cover;
+      background-position: center top; }
+    .hero-slider-container .slider .slide.active {
+      opacity: 1; }
+
+.footer {
+  background-color: #909219ca;
+  /* Example background color */
+  color: white;
+  /* Example text color */
+  padding: 20px;
+  margin-top: auto;
+  /* Push footer to the bottom */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .footer .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .footer .footer-wrapper .footer-link {
+      color: white;
+      font-size: 1.1rem; }
+      @media screen and (max-width: 768px) {
+        .footer .footer-wrapper .footer-link {
+          font-size: 0.9rem; } }
+  @media screen and (max-width: 768px) {
+    .footer {
+      font-size: 0.7rem; } }
