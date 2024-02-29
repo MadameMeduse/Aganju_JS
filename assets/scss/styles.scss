@@ -41,7 +41,6 @@ $font-size-nav-link: 1.2rem;
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   font-family: $font-titles;
   line-height: 1.6;
   font-size: 16px;
@@ -251,7 +250,6 @@ img {
       max-width: 400px;
       align-self: center;
       padding: 0 4rem;
-      // border-right: solid 2px black;
       display: flex;
       align-items: center;
 
@@ -300,6 +298,10 @@ img {
 }
 
 //Slider styles
+
+.hero-slider {
+  overflow: hidden;
+}
 .hero-slider-container {
   min-height: 90vh;
 
