@@ -3,20 +3,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.html", // Assuming your entry point is index.js
+  entry: "./src/index.html", // Change to the appropriate entry point
   output: {
-    path: path.resolve(__dirname, "docs"), // Output to the 'docs' directory
-    filename: "bundle.js", // Output file name
+    path: path.resolve(__dirname, "docs"),
+    filename: "bundle.js",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html", // Path to your index.html template
-      filename: "index.html", // Output HTML file name
+      template: "./src/index.html",
+      filename: "index.html",
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        { from: "src/assets", to: "assets" }, // Copy any assets from src/assets to docs/assets
-      ],
+      patterns: [{ from: "src/assets", to: "assets" }],
     }),
   ],
   module: {
@@ -29,18 +27,11 @@ module.exports = {
         test: /\.scss$/,
         use: [
           "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1,
-              modules: true,
-            },
-          },
+          "css-loader",
           {
             loader: "sass-loader",
             options: {
               sourceMap: true,
-              // Output CSS file to the desired location
               sassOptions: {
                 outputStyle: "expanded",
                 includePaths: ["./src/assets/scss"],
@@ -55,7 +46,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "docs"),
     },
-    port: 3000, // Optional: Specify the port to listen on
-    historyApiFallback: true, // Serve index.html for any 404 responses
+    port: 3000,
+    historyApiFallback: true,
   },
 };

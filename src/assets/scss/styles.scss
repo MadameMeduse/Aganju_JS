@@ -3,7 +3,9 @@ $color-black: #000;
 $color-background: #ffffff;
 $color-header-bg: #fff;
 $color-shadow: rgba(0, 0, 0, 0.1);
-$font-family: "Mulish", sans-serif;
+$font-titles: "Mulish", sans-serif;
+$font-text: "Poppins", sans-serif;
+
 $font-size-logo: 2rem;
 $font-size-nav-link: 1.2rem;
 
@@ -22,6 +24,12 @@ $font-size-nav-link: 1.2rem;
   font-style: normal;
 }
 
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 /* Add box-sizing border-box to all elements */
 *,
 *::before,
@@ -33,8 +41,8 @@ $font-size-nav-link: 1.2rem;
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  font-family: $font-family;
+  overflow: hidden;
+  font-family: $font-titles;
   line-height: 1.6;
   font-size: 16px;
   background-color: $color-background;
@@ -88,8 +96,7 @@ img {
     display: block;
     padding: 1rem;
     text-decoration: none;
-    font-size: 1.7rem;
-    font-weight: bold;
+    font-size: 1.5rem;
 
     // Add underline for active list item
     &.active {
@@ -244,14 +251,13 @@ img {
       max-width: 400px;
       align-self: center;
       padding: 0 4rem;
-      border-right: solid 2px black;
+      display: flex;
+      align-items: center;
 
       @media screen and (max-width: 768px) {
         width: 250px;
-        height: 250px;
-        border-bottom: solid 1px black;
+        height: auto;
         border-right: none;
-        padding: 2rem;
       }
     }
 
@@ -259,13 +265,17 @@ img {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 4rem;
+      padding: 4rem 1.7rem;
 
-      a {
+      a,
+      p {
         font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        font-family: $font-text;
+        font-weight: 300;
 
         @media screen and (max-width: 768px) {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
         }
       }
 
@@ -276,22 +286,23 @@ img {
       }
 
       .content-title {
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
         text-transform: uppercase;
 
         @media screen and (max-width: 768px) {
-          display: none;
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
         }
-      }
-
-      .content-phone {
-        margin: 1rem 0;
       }
     }
   }
 }
 
 //Slider styles
+
+.hero-slider {
+  overflow: hidden;
+}
 .hero-slider-container {
   min-height: 90vh;
 
@@ -332,6 +343,10 @@ img {
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 100px;
+  }
 
   .footer-wrapper {
     display: flex;

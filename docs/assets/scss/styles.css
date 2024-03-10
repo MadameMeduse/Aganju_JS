@@ -5,6 +5,12 @@
   font-style: normal;
 }
 
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 /* Add box-sizing border-box to all elements */
 *,
 *::before,
@@ -68,8 +74,7 @@ img {
   display: block;
   padding: 1rem;
   text-decoration: none;
-  font-size: 1.7rem;
-  font-weight: bold;
+  font-size: 1.5rem;
 }
 .header li a.active {
   text-decoration: underline;
@@ -109,7 +114,9 @@ img {
   display: inline-block;
   padding: 1rem;
   position: relative;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .header .menu-icon .navicon {
   background: #333;
@@ -119,8 +126,7 @@ img {
   transition: background 0.2s ease-out;
   width: 2rem;
 }
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
+.header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
   background: #333;
   content: "";
   display: block;
@@ -201,29 +207,33 @@ img {
   max-width: 400px;
   align-self: center;
   padding: 0 4rem;
-  border-right: solid 2px black;
+  display: flex;
+  align-items: center;
 }
 @media screen and (max-width: 768px) {
   .main-booking .main-wrapper .main-wrapper-image {
     width: 250px;
-    height: 250px;
-    border-bottom: solid 1px black;
+    height: auto;
     border-right: none;
-    padding: 2rem;
   }
 }
 .main-booking .main-wrapper .main-wrapper-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem;
+  padding: 4rem 1.7rem;
 }
-.main-booking .main-wrapper .main-wrapper-content a {
+.main-booking .main-wrapper .main-wrapper-content a,
+.main-booking .main-wrapper .main-wrapper-content p {
   font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 @media screen and (max-width: 768px) {
-  .main-booking .main-wrapper .main-wrapper-content a {
-    font-size: 1.1rem;
+  .main-booking .main-wrapper .main-wrapper-content a,
+  .main-booking .main-wrapper .main-wrapper-content p {
+    font-size: 1.2rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -234,16 +244,18 @@ img {
   }
 }
 .main-booking .main-wrapper .main-wrapper-content .content-title {
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
 @media screen and (max-width: 768px) {
   .main-booking .main-wrapper .main-wrapper-content .content-title {
-    display: none;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
   }
 }
-.main-booking .main-wrapper .main-wrapper-content .content-phone {
-  margin: 1rem 0;
+
+.hero-slider {
+  overflow: hidden;
 }
 
 .hero-slider-container {
@@ -252,8 +264,7 @@ img {
 .hero-slider-container .slider {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  /* Adjust height as needed */
+  min-height: 100vh; /* Adjust height as needed */
 }
 .hero-slider-container .slider .slide {
   position: absolute;
@@ -271,18 +282,20 @@ img {
 }
 
 .footer {
-  background-color: #909219ca;
-  /* Example background color */
-  color: white;
-  /* Example text color */
+  background-color: rgba(144, 146, 25, 0.7921568627); /* Example background color */
+  color: white; /* Example text color */
   padding: 20px;
-  margin-top: auto;
-  /* Push footer to the bottom */
+  margin-top: auto; /* Push footer to the bottom */
   position: absolute;
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    padding-bottom: 100px;
+  }
 }
 .footer .footer-wrapper {
   display: flex;
@@ -303,4 +316,4 @@ img {
   .footer {
     font-size: 0.7rem;
   }
-}
+}/*# sourceMappingURL=styles.css.map */
